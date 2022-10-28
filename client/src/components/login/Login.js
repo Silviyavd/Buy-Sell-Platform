@@ -1,10 +1,29 @@
 import './Login.css';
+import * as authService from "../../services/authService";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export const Login = () => {
+    const { userLogin } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e.target.password.value);
+        
+        const {
+            username,
+            password,
+        } = Object.fromEntries(new FormData(e.target));
+
+        authService.login(username, password)
+        .then(authData => {
+            userLogin(authData);
+            navigate('/');
+        })
+        .catch(() => {
+            navigate('/404');
+        });
     }
 
     return (
