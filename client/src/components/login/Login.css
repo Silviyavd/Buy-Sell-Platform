@@ -1,0 +1,23 @@
+form {
+    padding-left: 40%;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+input, label {
+    display: block;
+}
+
+input{
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+button {
+    width: 30%;
+    background-color: coral;
+    border: 1px solid black;
+    border-radius: 5px;
+}
