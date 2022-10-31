@@ -30,11 +30,11 @@ export const Login = () => {
         <div>
             <h1>Login Page</h1>
             <form onSubmit={handleSubmit}>
-                <div class="input-group">
+                <div className="input-group">
                     <label htmlFor="username">Username:</label>
                     <input type="text" name="username" placeholder="John Doe"/>                    
                 </div>
-                <div class="input-group">
+                <div className="input-group">
                     <label htmlFor="password">Password:   </label>
                     <input type="text" name="password"/>              
                 </div>
